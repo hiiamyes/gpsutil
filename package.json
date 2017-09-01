@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@mapbox/togeojson": "^0.16.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "moment-timezone": "^0.5.13",
+    "node-geo-distance": "^1.2.0",
+    "numeral": "^2.0.6",
+    "xml2js": "^0.4.19"
+  }
+}
