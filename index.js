@@ -30,6 +30,10 @@ console.log("duration: ", numeral(duration).format("00:00:00"));
 // const coord2 = trail.features[0].geometry.coordinates.map(c => ({latitude: c[0], longitude: c[1]}))[1]
 // console.log('coord1: ', coord1)
 // console.log('coord2: ', coord2)
+const target = {
+  latitude: 23.6011326,
+  longitude: 120.789729
+};
 let td = 0;
 let tdh = 0;
 const cc = trail.features[0].geometry.coordinates;
@@ -44,6 +48,9 @@ for (var i = 0; i < cc.length - 1; i++) {
   };
   tdh += +geo.haversineSync(coord1, coord2);
   td += +geo.vincentySync(coord1, coord2);
+  if (+geo.vincentySync(coord1, target) < 20) {
+    console.log("yes: ", i, coord1, geo.vincentySync(coord2, target));
+  }
 }
 // var vincentyDist = geo.vincentySync(coord1, coord2);
 // console.log('vv: ', vincentyDist)
